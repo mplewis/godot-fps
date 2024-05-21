@@ -58,7 +58,7 @@ func _unhandled_input(event: InputEvent):
 
 
 func _physics_process(delta: float):
-	var v = velocity.length()
+	var v := velocity.length()
 
 	if not is_on_floor():
 		velocity.y -= gravity * delta
@@ -66,15 +66,15 @@ func _physics_process(delta: float):
 	if Input.is_action_just_pressed("jump") and is_on_floor():
 		velocity.y = JUMP_VELOCITY
 
-	var sprint = 1.0
+	var sprint := 1.0
 	if Input.is_action_pressed("sprint"):
 		sprint = SPRINT_MODIFIER
 
-	var input_dir = Input.get_vector("left", "right", "up", "down")
-	var direction = (head.transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
-	var goal_x = direction.x * BASE_SPEED * sprint
-	var goal_z = direction.z * BASE_SPEED * sprint
-	var control = GROUND_CONTROL if is_on_floor() else JUMP_CONTROL
+	var input_dir := Input.get_vector("left", "right", "up", "down")
+	var direction := (head.transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
+	var goal_x := direction.x * BASE_SPEED * sprint
+	var goal_z := direction.z * BASE_SPEED * sprint
+	var control := GROUND_CONTROL if is_on_floor() else JUMP_CONTROL
 	velocity.x = lerp(velocity.x, goal_x, control * delta)
 	velocity.z = lerp(velocity.z, goal_z, control * delta)
 
@@ -88,7 +88,7 @@ func _physics_process(delta: float):
 
 ## A vector representing the head bobbing motion at a given point in time.
 func headbob(t: float) -> Vector3:
-	var p = Vector3.ZERO
+	var p := Vector3.ZERO
 	p.y = HEADBOB_AMP[0] * sin(t * HEADBOB_FREQ)
 	p.x = HEADBOB_AMP[1] * cos(t * HEADBOB_FREQ * 0.5)
 	return p
