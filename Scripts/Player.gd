@@ -7,7 +7,7 @@ const SPRINT_MODIFIER = 1.5
 ## The speed at which the player moves when sprinting.
 const SPRINT_SPEED = BASE_SPEED * SPRINT_MODIFIER
 ## The velocity at which the player jumps.
-const JUMP_VELOCITY = 5.0
+const JUMP_VELOCITY = 4.0
 ## The control factor for the player's motion on the ground. Higher value = more control.
 const GROUND_CONTROL = 20.0
 ## The control factor for the player's motion in the air.
