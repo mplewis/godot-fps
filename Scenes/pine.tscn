@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://cugfwiw3d0tsl"]
+
+[ext_resource type="PackedScene" uid="uid://sb0fm4g0b8cn" path="res://Models/pine.glb" id="1_d6ejq"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6rdpv"]
+albedo_color = Color(0.125783, 0.32877, 0.252403, 1)
+
+[node name="pine" instance=ExtResource("1_d6ejq")]
+transform = Transform3D(2.5, 0, 0, 0, 2.5, 0, 0, 0, 2.5, 0, 0, 0)
+
+[node name="pine" parent="." index="0"]
+surface_material_override/0 = SubResource("StandardMaterial3D_6rdpv")
