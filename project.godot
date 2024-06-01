@@ -66,6 +66,10 @@ sprint={
 ]
 }
 
+[layer_names]
+
+3d_physics/layer_2="Bullets"
+
 [shader_globals]
 
 sgt_player_position={
